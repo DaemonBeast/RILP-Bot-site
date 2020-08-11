@@ -6,7 +6,7 @@ html, body {
 }
 
 * {
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Lato', cursive;
   font-size: 18px;
   line-height: 1.5;
 }
@@ -27,10 +27,23 @@ header {
 }
 
 h1 {
+  display: flex;
+  align-items: center;
+
   margin: 0;
 
+  font-family: 'BioRhyme', serif;
   font-size: 1.5rem;
   font-weight: 700;
+}
+
+h1 > img {
+  margin-right: 20px;
+
+  width: 50px;
+  height: 50px;
+
+  border-radius: 50%;
 }
 
 nav {
@@ -40,6 +53,9 @@ nav {
 
 nav a {
   margin: 0 20px;
+
+  font-family: 'BioRhyme', serif;
+  font-weight: bold;
 }
 
 a {
