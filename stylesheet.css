@@ -5,6 +5,10 @@ html, body {
   margin: 0;
 }
 
+body {
+  overflow: hidden auto;
+}
+
 * {
   font-family: 'Lato', cursive;
   font-size: 18px;
@@ -23,7 +27,8 @@ header {
 
   height: 100px;
 
-  z-index: 2;
+  z-index: 3;
+  transition: 0.2s;
 }
 
 h1 {
@@ -31,6 +36,8 @@ h1 {
   align-items: center;
 
   margin: 0;
+
+  color: #ffffff;
 
   font-family: 'BioRhyme', serif;
   font-size: 1.5rem;
@@ -158,6 +165,8 @@ nav > a:hover::after {
 
   background-image: url('./images/background.jpg');
   background-size: cover;
+
+  z-index: 1;
 }
 
 .big {
@@ -174,26 +183,32 @@ nav > a:hover::after {
 }
 
 .top-left {
-  position: fixed;
+  position: absolute;
 
   left: -350px;
   top: -350px;
 
   width: 1000px;
   height: 1000px;
+
+  z-index: 2;
 }
 
 .bottom-right {
-  position: fixed;
+  position: absolute;
 
   right: -350px;
   bottom: -350px;
 
   width: 1000px;
   height: 1000px;
+
+  z-index: 2;
 }
 
 .circle {
+  position: absolute;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,7 +223,7 @@ nav > a:hover::after {
 
   border-radius: 50%;
 
-  z-index: 1;
+  z-index: 2;
 }
 
 .large {
@@ -221,4 +236,46 @@ nav > a:hover::after {
   margin-right: 20px;
 
   font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1024px) {
+  nav {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    height: 50px;
+
+    background: #ffffff;
+  }
+
+  nav > a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0;
+
+    font-size: 0.7rem;
+  }
+
+  nav > a > .fas {
+    margin: 0 0 2px 0;
+  }
+
+  nav > .button {
+    display: none;
+  }
+
+  @media only screen and (max-width: 1024px) and (orientation: landscape) {
+    .filled {
+      margin-top: 100px;
+    }
+  }
 }
