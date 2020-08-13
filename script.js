@@ -1,5 +1,5 @@
-const images = document.getElementsByClassName('parallax');
-new simpleParallax(images);
+/*const images = document.getElementsByClassName('parallax');
+new simpleParallax(images);*/
 
 const backgroundOnScroll = [...document.getElementsByClassName('backgroundOnScroll')];
 
@@ -13,4 +13,10 @@ window.addEventListener('scroll', event => {
       element.style.background = 'none';
     });
   }
+});
+
+const parallax = [...document.getElementsByClassName('parallax')];
+
+window.addEventListener('scroll', e => {
+  parallax.forEach(el => el.style.transform = `translateY(-${window.scrollY * el.dataset.speed}px)`);
 });
